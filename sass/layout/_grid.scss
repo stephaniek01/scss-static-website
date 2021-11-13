@@ -1,0 +1,55 @@
+.row {
+  max-width: $grid-width;
+  margin: 0 auto;
+
+  &:not(:last-child) {
+    margin-bottom: $gutter-vertical;
+  }
+
+  @include clearfix;
+
+  //   attribute selector selects all the elements using the "class" attribute
+  // "^" specifies that all elements with the attribute that starts with the mentioned string should be selected
+  //   "^" starts, "%" ends, "*" contains
+  [class^="col-"] {
+    float: left;
+
+    &:not(:last-child) {
+      margin-right: $gutter-horizontal;
+    }
+  }
+
+  .col-1-of-2 {
+    //   to use a sass variable within a css function
+    width: calc((100% - #{$gutter-horizontal}) / 2);
+  }
+
+  .col-1-of-3 {
+    width: calc((100% - #{$gutter-horizontal}* 2) / 3);
+  }
+
+    // add the width of two .col-1-of-3 and once the gutter width
+  .col-2-of-3 {
+    width: calc(
+      2 * ((100% - #{$gutter-horizontal}* 2) / 3) + #{$gutter-horizontal}
+    );
+  }
+
+  .col-1-of-4 {
+    width: calc((100% - #{$gutter-horizontal}* 3) / 4);
+  }
+
+  // add the width of two .col-1-of-4 and once the gutter width
+  .col-2-of-4 {
+    width: calc(
+      2 * ((100% - #{$gutter-horizontal}* 3) / 4) + #{$gutter-horizontal}
+    );
+  }
+
+  // add the width of three .col-1-of-4 and twice the gutter width
+  .col-3-of-4 {
+    width: calc(
+      3 * ((100% - #{$gutter-horizontal}* 3) / 4) + 2 * (#{$gutter-horizontal})
+    );
+  }
+}
