@@ -39,6 +39,12 @@
     transition: all 0.4s;
   }
 
+  &--animated {
+    animation: moveInBottom 1s ease-out 0.75s;
+    /*  applies the values defined in the first relevant keyframe */
+    animation-fill-mode: backwards;
+  }
+
   &--white {
     background-color: $color-white;
     color: $color-grey-dark;
@@ -48,24 +54,25 @@
     }
   }
 
-  &--animated {
-    animation: moveInBottom 1s ease-out 0.75s;
-    /*  applies the values defined in the first relevant keyframe */
-    animation-fill-mode: backwards;
+  &--green {
+    color: $color-white;
+    background-color: $color-primary;
+
+    &::after {
+      background-color: $color-primary;
+    }
   }
 }
 
 .btn-text {
-
   &:link,
-  &:visited{
+  &:visited {
     color: $color-primary;
     display: inline-block;
     text-decoration: none;
     border-bottom: 1px solid $color-primary;
-    padding: .5rem 1rem;
+    padding: 0.5rem 1rem;
     font-size: $default-font-size;
-    
   }
 
   &:hover {
@@ -78,7 +85,8 @@
   &:active {
     background-color: $color-primary;
     color: $color-white;
-    box-shadow: 0 .5rem 1rem rgba($color-black, 0.2);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
     transform: translateY(0);
   }
+
 }
