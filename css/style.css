@@ -388,13 +388,13 @@ body {
   .form__radio-button::after {
     content: "";
     display: block;
-    height: 1.4rem;
-    width: 1.4rem;
     position: absolute;
-    border-radius: 50%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    height: 1.4rem;
+    width: 1.4rem;
+    border-radius: 50%;
     background-color: #55c57a;
     opacity: 0;
     transition: opacity 0.2s; }
@@ -450,6 +450,72 @@ body {
   .story:hover .story__img {
     transform: translateX(-4rem) scale(1);
     filter: blur(3px) brightness(80%); }
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5000;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(51, 51, 51, 0.8);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s; }
+  .popup__content {
+    width: 75%;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: table;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.25);
+    transition: all 0.4s 0.2s; }
+  .popup__img {
+    display: block;
+    width: 100%; }
+  .popup__left {
+    width: 33.333333%;
+    display: table-cell;
+    vertical-align: middle; }
+  .popup__right {
+    width: 66.666667%;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 3rem 5rem; }
+  .popup__text {
+    font-size: 1.4rem;
+    -moz-column-count: 2;
+    -moz-column-gap: 4rem;
+    -moz-column-rule: 1px solid #eee;
+    column-count: 2;
+    column-gap: 4rem;
+    column-rule: 1px solid #eee;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto; }
+  .popup:target {
+    opacity: 1;
+    visibility: visible; }
+  .popup:target .popup__content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1); }
+  .popup__close {
+    transition: all 0.2s; }
+    .popup__close:link, .popup__close:visited {
+      font-size: 4rem;
+      display: inline-block;
+      position: absolute;
+      top: 2.5rem;
+      right: 2.5rem;
+      text-decoration: none;
+      color: #333;
+      line-height: 1; }
+    .popup__close:hover {
+      color: #55c57a; }
 
 .footer {
   background-color: #333;
