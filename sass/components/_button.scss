@@ -48,6 +48,7 @@
   &--animated {
     animation: moveInBottom 1s ease-out 0.75s;
     /*  applies the values defined in the first relevant keyframe */
+    // here for the 0% keyframe
     animation-fill-mode: backwards;
   }
 

@@ -14,3 +14,41 @@
     left: 50%;
     transform: translate(-50%,-50%);
 }
+
+// MEDIA QUERY MANAGER
+/*
+
+0 - 600         Mobile
+600 - 900px     Tablet potrait
+900 - 1200px    Tablet landscape
+1200 - 1800px   Desktop(default styles)
+1800+           Big Desktop
+*/
+
+/* it is advised to use em instead of rem for media queries, because em is supported for more browsers */
+
+/*
+break-point argument choices:
+-phone
+-tab-port
+-tab-land
+-big-desktop
+*/
+@mixin respond($break-point){
+
+    @if $break-point == phone {
+        @media (max-width: 37.5em) { @content };
+    }
+
+    @if $break-point == tab-port {
+        @media (max-width: 56.25em) { @content };
+    }
+
+    @if $break-point == tab-land {
+        @media (max-width: 75em) { @content };
+    }
+
+    @if $break-point == big-desktop {
+        @media (min-width: 112.5em) { @content };
+    }
+}

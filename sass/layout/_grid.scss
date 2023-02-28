@@ -8,9 +8,9 @@
 
   @include clearfix;
 
-  //   attribute selector selects all the elements using the "class" attribute
+  // attribute selector selects all the elements using the "class" attribute
   // "^" specifies that all elements with the attribute that starts with the mentioned string should be selected
-  //   "^" starts, "%" ends, "*" contains
+  // "^" starts, "%" ends, "*" contains
   [class^="col-"] {
     float: left;
 
